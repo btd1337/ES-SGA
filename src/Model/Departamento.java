@@ -12,7 +12,7 @@ package Model;
 public class Departamento {
     private String cod;
     private String nome;
-    private String chefeDepartamento;
+    private Professor chefeDepartamento;
     private String descricao;
     
     public Departamento(String cod, String nome, String descricao){
@@ -45,11 +45,11 @@ public class Departamento {
         this.nome = nome;
     }
 
-    public String getChefeDepartamento() {
+    public Professor getChefeDepartamento() {
         return chefeDepartamento;
     }
 
-    public void setChefeDepartamento(String chefeDepartamento) {
+    public void setChefeDepartamento(Professor chefeDepartamento) {
         this.chefeDepartamento = chefeDepartamento;
     }
 
