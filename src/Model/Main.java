@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.sga;
+package Model;
 
 /**
  *
  * @author btd1337
  */
-public class ESSGA {
+public class Main {
 
     /**
      * @param args the command line arguments
