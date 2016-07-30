@@ -20,7 +20,9 @@ public class Main {
      *
      */
     public static ArrayList< Departamento > ListadeDepartamentos = new ArrayList< Departamento >();
+    public static ArrayList< Professor > ListadeProfessores = new ArrayList< Professor >();
     public static CadastroDepartamento telaCadastroDepartamento = new CadastroDepartamento();
+     public static CadastroProfessor telaCadastroProfessor = new CadastroProfessor();
     /**
      * @param args the command line arguments
      */
@@ -76,7 +78,7 @@ public class Main {
                 break;
             }
             case 5 : {
-               // criaProfessor();
+                telaCadastroProfessor.setVisible(true);
                 break;
             }
             case 6 : {

@@ -66,7 +66,7 @@ public class CadastroDepartamento extends javax.swing.JFrame {
             }
         });
 
-        cancela.setText("Cancelar");
+        cancela.setText("Voltar");
         cancela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelaActionPerformed(evt);
