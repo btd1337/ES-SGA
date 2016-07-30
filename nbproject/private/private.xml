@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/btd1337/NetBeansProjects/ES-SGA/src/es/sga/ESSGA.java</file>
+            <file>file:/home/btd1337/NetBeansProjects/ES-SGA/src/Model/Professor.java</file>
+            <file>file:/home/btd1337/NetBeansProjects/ES-SGA/src/Model/TipoCurso.java</file>
+            <file>file:/home/btd1337/NetBeansProjects/ES-SGA/src/Model/Departamento.java</file>
+            <file>file:/home/btd1337/NetBeansProjects/ES-SGA/src/Model/Main.java</file>
+            <file>file:/home/btd1337/NetBeansProjects/ES-SGA/src/Model/Curso.java</file>
         </group>
     </open-files>
 </project-private>
