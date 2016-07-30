@@ -7,13 +7,20 @@ package Model;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import javax.swing.JPanel;
 /**
  *
  * @author btd1337
  */
+
 public class Main {
 
+    /**
+     *
+     */
+    public static ArrayList< Departamento > ListadeDepartamentos = new ArrayList< Departamento >();
+    public static CadastroDepartamento telaCadastroDepartamento = new CadastroDepartamento();
     /**
      * @param args the command line arguments
      */
@@ -21,7 +28,7 @@ public class Main {
         
         Scanner scanner = new Scanner(System.in);
         int opMenu;
-        
+       
         do{
             exibeMenu();
             try{
@@ -50,43 +57,46 @@ public class Main {
     private static void getOpcaoEscolhida(int opMenu) {
         switch(opMenu){
             case 1 : {
-                criaDepartamento();
+                telaCadastroDepartamento.setVisible(true);
+             
+                        
+               // criaDepartamento();
                 break;
             }
             case 2 : {
-                listaDepartamentos();
+               // listaDepartamentos();
                 break;
             }
             case 3 : {
-                criaCurso();
+               // criaCurso();
                 break;
             }
             case 4 : {
-                listaCursos();
+                //listaCursos();
                 break;
             }
             case 5 : {
-                criaProfessor();
+               // criaProfessor();
                 break;
             }
             case 6 : {
-                listaProfessores();
+               // listaProfessores();
                 break;
             }
             case 7 : {
-                criaDisciplina();
+               // criaDisciplina();
                 break;
             }
             case 8 : {
-                listaDisciplinas();
+                //listaDisciplinas();
                 break;
             }
             case 9 : {
-                criaGrade();
+                //criaGrade();
                 break;
             }
             case 10 : {
-                listaGrade();
+                //listaGrade();
                 break;
             }
             case 0 : {
@@ -97,6 +107,15 @@ public class Main {
                 System.out.println("Opção Inválida");
             }
         }
+    }
+    
+    /**
+     *
+     * @param novo
+     */
+    public static void criaDepartamento(Departamento novo)
+    {
+          
     }
     
 }
