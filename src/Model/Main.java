@@ -73,6 +73,22 @@ public class Main {
                 listaProfessores();
                 break;
             }
+            case 7 : {
+                criaDisciplina();
+                break;
+            }
+            case 8 : {
+                listaDisciplinas();
+                break;
+            }
+            case 9 : {
+                criaGrade();
+                break;
+            }
+            case 10 : {
+                listaGrade();
+                break;
+            }
             case 0 : {
                 System.out.println("\nSistema Encerrado!");
                 break;
