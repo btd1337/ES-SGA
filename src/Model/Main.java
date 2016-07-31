@@ -84,7 +84,7 @@ public class Main {
                 break;
             }
             case 5 : {
-                telaCadastroProfessor.setVisible(true);
+             
                 break;
             }
             case 6 : {
