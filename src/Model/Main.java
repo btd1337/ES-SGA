@@ -23,13 +23,16 @@ public class Main {
     public static ArrayList< Professor > ListadeProfessores = new ArrayList< Professor >();
     public static CadastroDepartamento telaCadastroDepartamento = new CadastroDepartamento();
      public static CadastroProfessor telaCadastroProfessor = new CadastroProfessor();
+     
+     public static TelaMenu telaMenu = new TelaMenu();
+     public static int opMenu;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
         Scanner scanner = new Scanner(System.in);
-        int opMenu;
+        
        
         do{
             exibeMenu();
@@ -46,6 +49,7 @@ public class Main {
     }
 
     private static void exibeMenu() {
+         telaMenu.setVisible(true);
          System.out.println("1 - Criar Departamento");
          System.out.println("2 - Listar Departamentos");
          System.out.println("3 - Criar Curso");
