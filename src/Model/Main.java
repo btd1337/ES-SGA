@@ -21,8 +21,10 @@ public class Main {
      */
     public static ArrayList< Departamento > ListadeDepartamentos = new ArrayList< Departamento >();
     public static ArrayList< Professor > ListadeProfessores = new ArrayList< Professor >();
+    public static ArrayList< Disciplina > ListadeDisciplina = new ArrayList< Disciplina >();
     public static CadastroDepartamento telaCadastroDepartamento = new CadastroDepartamento();
      public static CadastroProfessor telaCadastroProfessor = new CadastroProfessor();
+      public static CadastroDisciplina telaCadastrDisciplina = new CadastroDisciplina();
      
      public static TelaMenu telaMenu = new TelaMenu();
      public static int opMenu;
