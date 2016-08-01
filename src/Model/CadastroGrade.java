@@ -264,6 +264,7 @@ public class CadastroGrade extends javax.swing.JFrame {
                         disciplinas.add(d);
                 
                 Grade novaGrade = new Grade(Integer.parseInt(ano.getText()), curso, disciplinas, ativaCheck.isEnabled());
+                Main.ListadeGrades.add(novaGrade);
                 ano.setText("");
                 disciplinasAdicionadas.clear();
                 discAddList.setListData(disciplinasAdicionadas);

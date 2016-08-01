@@ -24,6 +24,7 @@ public class Main {
     public static ArrayList< Aluno > ListadeAlunos = new ArrayList<>();
     public static ArrayList< Disciplina > ListadeDisciplina = new ArrayList<>();
     public static ArrayList< Curso > ListadeCursos = new ArrayList<>();
+    public static ArrayList< Grade > ListadeGrades = new ArrayList<>();
     public static CadastroDepartamento telaCadastroDepartamento = new CadastroDepartamento();
     public static CadastroProfessor telaCadastroProfessor = new CadastroProfessor();
     public static CadastroDisciplina telaCadastrDisciplina = new CadastroDisciplina();
