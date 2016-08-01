@@ -16,35 +16,20 @@ public class Curso {
     private String nome;
     private String descricao;
     private int cargaHoraria;
-    private String coordenador;
-    private String tipoCurso;
+    private Professor coordenador;
+    private TipoCurso tipoCurso;
+    private Departamento departamento;
     private ArrayList<Grade> gradesAtivas;
     private ArrayList<Grade> gradesInativas;
-
-    public Curso(String cod, String nome, String descricao) {
-        this.cod = cod;
-        this.nome = nome;
-        this.descricao = descricao;
-    }
-
-    public Curso(String cod, String nome, String descricao, int cargaHoraria, String coordenador, String tipoCurso, ArrayList<Grade> gradesAtivas, ArrayList<Grade> gradesInativas) {
-        this.cod = cod;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.cargaHoraria = cargaHoraria;
-        this.coordenador = coordenador;
-        this.tipoCurso = tipoCurso;
-        this.gradesAtivas = gradesAtivas;
-        this.gradesInativas = gradesInativas;
-    }
     
-    public Curso(String cod, String nome, String descricao, int cargaHoraria, String coordenador, String tipoCurso) {
+    public Curso(String cod, String nome, String descricao, int cargaHoraria, Professor coordenador, TipoCurso tipoCurso, Departamento departamento) {
         this.cod = cod;
         this.nome = nome;
         this.descricao = descricao;
         this.cargaHoraria = cargaHoraria;
         this.coordenador = coordenador;
         this.tipoCurso = tipoCurso;
+        this.departamento = departamento;
     }
 
     public String getCod() {
@@ -79,20 +64,28 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
     }
 
-    public String getCoordenador() {
+    public Professor getCoordenador() {
         return coordenador;
     }
 
-    public void setCoordenador(String coordenador) {
+    public void setCoordenador(Professor coordenador) {
         this.coordenador = coordenador;
     }
 
-    public String getTipoCurso() {
+    public TipoCurso getTipoCurso() {
         return tipoCurso;
     }
 
-    public void setTipoCurso(String tipoCurso) {
+    public void setTipoCurso(TipoCurso tipoCurso) {
         this.tipoCurso = tipoCurso;
+    }
+    
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
     }
 
     public ArrayList<Grade> getGradesAtivas() {

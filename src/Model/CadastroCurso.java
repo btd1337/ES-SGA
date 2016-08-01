@@ -69,7 +69,7 @@ public class CadastroCurso extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Cadastro de Curso:");
+        jLabel1.setText("Cadastro de Curso");
 
         jLabel2.setText("Código:");
 
@@ -241,14 +241,29 @@ public class CadastroCurso extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarActionPerformed
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
+        Professor profSelected = null;
+        TipoCurso tipoSelected = null;
+        Departamento depSelected = null;
+        for(Professor p: Main.ListadeProfessores){
+            if(p.equals(profCoord.getSelectedItem()))
+                profSelected = p;
+        }
+        for(TipoCurso tipo: TipoCurso.values()){
+            if(tipo.equals(tipoCurso.getSelectedItem()))
+                tipoSelected = tipo;
+        }
+        for(Departamento dep: Main.ListadeDepartamentos){
+            if(dep.equals(departamento.getSelectedItem()))
+                depSelected = dep;
+        }
+        
         if(codigo.getText().equals("") || nomeCurso.getText().equals("") || descricao.getText().equals("") || cargaHoraria.getText().equals(""))
         {
             JOptionPane.showMessageDialog(null, "Erro: Campo Vazio");
         }
-        else{
+        else if(profSelected != null && depSelected != null){
             try{
-                Curso novoCurso;
-                novoCurso = new Curso(codigo.getText(),nomeCurso.getText(), descricao.getText(), Integer.parseInt(cargaHoraria.getText()), profCoord.getSelectedItem().toString(), tipoCurso.getSelectedItem().toString());
+                Curso novoCurso = new Curso(codigo.getText(),nomeCurso.getText(), descricao.getText(), Integer.parseInt(cargaHoraria.getText()), profSelected, tipoSelected, depSelected);
                 Main.ListadeCursos.add(novoCurso);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 codigo.setText("");
@@ -264,6 +279,9 @@ public class CadastroCurso extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
             }
             
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Professor e/ou Departamento não selecionado");
         }
     }//GEN-LAST:event_salvarActionPerformed
 
