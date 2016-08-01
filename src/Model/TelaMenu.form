@@ -25,30 +25,38 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="45" pref="47" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="CadastroProfessor" pref="160" max="32767" attributes="0"/>
-                  <Component id="incluirGrade" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="incluirDepartamento" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
                   <Component id="incluirCurso" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="incluirDisciplina" pref="160" max="32767" attributes="0"/>
-                  <Component id="jButton3" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="incluirGrade" min="-2" pref="160" max="-2" attributes="0"/>
+                  <Component id="incluirDisciplina" min="-2" pref="160" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="incluirAluno" min="-2" pref="160" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="CadastroProfessor" min="-2" pref="160" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="85" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="193" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="61" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="193" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" pref="61" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -60,15 +68,15 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="CadastroProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="incluirDepartamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CadastroProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="incluirDisciplina" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="53" pref="53" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="incluirGrade" alignment="1" max="32767" attributes="0"/>
-                  <Component id="incluirCurso" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jButton3" alignment="1" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="incluirGrade" alignment="3" max="32767" attributes="0"/>
+                  <Component id="incluirCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="incluirAluno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" pref="31" max="-2" attributes="0"/>
@@ -102,12 +110,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="incluirDisciplinaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="incluirAluno">
       <Properties>
         <Property name="text" type="java.lang.String" value="Incluir Aluno"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="incluirAlunoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="incluirDepartamento">

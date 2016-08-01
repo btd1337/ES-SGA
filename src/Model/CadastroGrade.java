@@ -196,9 +196,9 @@ public class CadastroGrade extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cursoBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cursoBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
@@ -249,7 +249,7 @@ public class CadastroGrade extends javax.swing.JFrame {
         if(ano.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Preencha o Ano da Grade");
         }
-        else if(discAddList.getSelectedValuesList().isEmpty()){
+        else if(disciplinasAdicionadas.isEmpty()){
             JOptionPane.showMessageDialog(null, "É necessário que a Grade possua pelo menos UMA Disciplina");
         }
         else{
@@ -264,6 +264,11 @@ public class CadastroGrade extends javax.swing.JFrame {
                         disciplinas.add(d);
                 
                 Grade novaGrade = new Grade(Integer.parseInt(ano.getText()), curso, disciplinas, ativaCheck.isEnabled());
+                ano.setText("");
+                disciplinasAdicionadas.clear();
+                discAddList.setListData(disciplinasAdicionadas);
+                
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
             }
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");

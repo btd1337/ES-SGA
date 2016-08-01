@@ -244,7 +244,7 @@ public class CadastroCurso extends javax.swing.JFrame {
         TipoCurso tipoSelected = null;
         Departamento depSelected = null;
         for(Professor p: Main.ListadeProfessores){
-            if(p.equals(profCoord.getSelectedItem()))
+            if(p.getNome().equals(profCoord.getSelectedItem().toString()))
                 profSelected = p;
         }
         for(TipoCurso tipo: TipoCurso.values()){
@@ -252,7 +252,7 @@ public class CadastroCurso extends javax.swing.JFrame {
                 tipoSelected = tipo;
         }
         for(Departamento dep: Main.ListadeDepartamentos){
-            if(dep.equals(departamento.getSelectedItem()))
+            if(dep.getNome().equals(departamento.getSelectedItem().toString()))
                 depSelected = dep;
         }
         
