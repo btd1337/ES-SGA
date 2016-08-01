@@ -16,8 +16,8 @@ public class Curso {
     private String nome;
     private String descricao;
     private int cargaHoraria;
-    private Professor coordenador;
-    private TipoCurso tipoCurso;
+    private String coordenador;
+    private String tipoCurso;
     private ArrayList<Grade> gradesAtivas;
     private ArrayList<Grade> gradesInativas;
 
@@ -27,7 +27,7 @@ public class Curso {
         this.descricao = descricao;
     }
 
-    public Curso(String cod, String nome, String descricao, int cargaHoraria, Professor coordenador, TipoCurso tipoCurso, ArrayList<Grade> gradesAtivas, ArrayList<Grade> gradesInativas) {
+    public Curso(String cod, String nome, String descricao, int cargaHoraria, String coordenador, String tipoCurso, ArrayList<Grade> gradesAtivas, ArrayList<Grade> gradesInativas) {
         this.cod = cod;
         this.nome = nome;
         this.descricao = descricao;
@@ -36,6 +36,15 @@ public class Curso {
         this.tipoCurso = tipoCurso;
         this.gradesAtivas = gradesAtivas;
         this.gradesInativas = gradesInativas;
+    }
+    
+    public Curso(String cod, String nome, String descricao, int cargaHoraria, String coordenador, String tipoCurso) {
+        this.cod = cod;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.cargaHoraria = cargaHoraria;
+        this.coordenador = coordenador;
+        this.tipoCurso = tipoCurso;
     }
 
     public String getCod() {
@@ -70,19 +79,19 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
     }
 
-    public Professor getCoordenador() {
+    public String getCoordenador() {
         return coordenador;
     }
 
-    public void setCoordenador(Professor coordenador) {
+    public void setCoordenador(String coordenador) {
         this.coordenador = coordenador;
     }
 
-    public TipoCurso getTipoCurso() {
+    public String getTipoCurso() {
         return tipoCurso;
     }
 
-    public void setTipoCurso(TipoCurso tipoCurso) {
+    public void setTipoCurso(String tipoCurso) {
         this.tipoCurso = tipoCurso;
     }
 

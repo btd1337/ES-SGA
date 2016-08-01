@@ -17,7 +17,7 @@ class Professor {
     private String cep;
     private String bairro;
     private long numero;
-    private long complemento;
+    private String complemento;
     private String uf;
 
     public Professor(String nome, String rg, long cpf) {
@@ -26,7 +26,7 @@ class Professor {
         this.cpf = cpf;
     }
 
-    public Professor(String nome, String rg, long cpf, String logradouro, String cep, String bairro, long numero, long complemento, String uf) {
+    public Professor(String nome, String rg, long cpf, String logradouro, String cep, String bairro, long numero, String complemento, String uf) {
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
@@ -94,11 +94,11 @@ class Professor {
         this.numero = numero;
     }
 
-    public long getComplemento() {
+    public String getComplemento() {
         return complemento;
     }
 
-    public void setComplemento(long complemento) {
+    public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
 

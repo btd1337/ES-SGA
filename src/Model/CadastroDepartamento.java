@@ -91,9 +91,11 @@ public class CadastroDepartamento extends javax.swing.JFrame {
                                     .addComponent(jButton1)
                                     .addGap(122, 122, 122)
                                     .addComponent(jButton2))
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.CENTER)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.CENTER))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -109,11 +111,11 @@ public class CadastroDepartamento extends javax.swing.JFrame {
                     .addComponent(nome)
                     .addComponent(jTextField1))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel2))
-                    .addComponent(jTextField2))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -138,10 +140,10 @@ public class CadastroDepartamento extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Erro campo vazio");
       }
       else{
-        Departamento novo = new Departamento(jTextField1.getText(), jTextField2.getText(), jTextArea1.getText());
+      Departamento novo = new Departamento(jTextField1.getText(), jTextField2.getText(), jTextArea1.getText());
       Main.ListadeDepartamentos.add(novo);
-       JOptionPane.showMessageDialog(null, "Departamento Cadastrado com Sucesso");
-         jTextField1.setText("");
+      JOptionPane.showMessageDialog(null, "Departamento Cadastrado com Sucesso");
+      jTextField1.setText("");
       jTextField2.setText("");
       jTextArea1.setText("");
       }
