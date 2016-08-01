@@ -175,6 +175,7 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void incluirGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirGradeActionPerformed
+        Main.telaCadastroGrade.CarregarCampos();
         Main.telaMenu.setVisible(false);   
         Main.telaCadastroGrade.setVisible(true);
     }//GEN-LAST:event_incluirGradeActionPerformed

@@ -36,6 +36,8 @@ public class Main {
      */
     public static void main(String[] args) {
         
+        telaMenu.setVisible(true);
+        /*
         Scanner scanner = new Scanner(System.in);
         
        
@@ -50,11 +52,11 @@ public class Main {
             }
             
         }while(opMenu != 0);
-        
+        */
     }
 
+    /*
     private static void exibeMenu() {
-         telaMenu.setVisible(true);
          System.out.println("1 - Criar Departamento");
          System.out.println("2 - Listar Departamentos");
          System.out.println("3 - Criar Curso");
@@ -119,14 +121,5 @@ public class Main {
             }
         }
     }
-    
-    /**
-     *
-     * @param novo
-     */
-    public static void criaDepartamento(Departamento novo)
-    {
-          
-    }
-    
+    */
 }

@@ -5,17 +5,40 @@
  */
 package Model;
 
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mateus
  */
 public class CadastroGrade extends javax.swing.JFrame {
-
     /**
      * Creates new form CadastroGrade
      */
+    private Vector<String> disciplinasAdicionadas;
+    private Vector<String> disciplinasDisponiveis;
+    
     public CadastroGrade() {
         initComponents();
+    }
+    
+    public void CarregarCampos(){
+        disciplinasDisponiveis = new Vector<>();
+        disciplinasAdicionadas = new Vector<>();
+        
+        for(int i=0; i<Main.ListadeDisciplina.size(); i++){
+            disciplinasDisponiveis.add(Main.ListadeDisciplina.get(i).getNome());
+        }
+        discDispList.setListData(disciplinasDisponiveis);
+        discAddList.setListData(disciplinasAdicionadas);
+    
+        for(Curso c: Main.ListadeCursos){
+            cursoBox.addItem(c.getNome());
+        }
     }
 
     /**
@@ -33,19 +56,19 @@ public class CadastroGrade extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         cursoBox = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        ano = new javax.swing.JTextField();
+        ativaCheck = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        discAddList = new javax.swing.JList<>();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        addDiscButton = new javax.swing.JButton();
+        remDiscButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        discDispList = new javax.swing.JList<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        salvarButton = new javax.swing.JButton();
+        voltarButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Cadastro de Curso");
@@ -59,37 +82,57 @@ public class CadastroGrade extends javax.swing.JFrame {
 
         jLabel5.setText("Ano:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        ano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                anoActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText("Ativa");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        ativaCheck.setText("Ativa");
+        ativaCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                ativaCheckActionPerformed(evt);
             }
         });
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(discAddList);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Disciplinas Obrigatórias");
 
-        jButton1.setText("Adicionar");
+        addDiscButton.setText("Adicionar");
+        addDiscButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addDiscButtonActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Remover");
+        remDiscButton.setText("Remover");
+        remDiscButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remDiscButtonActionPerformed(evt);
+            }
+        });
 
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(discDispList);
 
         jLabel6.setText("Lista de Disciplinas Disponíveis");
 
         jLabel8.setText("Listas Adicionadas à Grade");
 
-        jButton3.setText("Salvar");
+        salvarButton.setText("Salvar");
+        salvarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Voltar");
+        voltarButton.setText("Voltar");
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,8 +147,8 @@ public class CadastroGrade extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton2))
+                                    .addComponent(addDiscButton)
+                                    .addComponent(remDiscButton))
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -114,14 +157,14 @@ public class CadastroGrade extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jButton3))
+                                        .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(salvarButton))
                                 .addGap(49, 49, 49)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1)
+                                    .addComponent(ativaCheck)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
-                                        .addComponent(jButton4)))))
+                                        .addComponent(voltarButton)))))
                         .addGap(0, 73, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,46 +201,104 @@ public class CadastroGrade extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(addDiscButton)
+                            .addGap(18, 18, 18)
+                            .addComponent(remDiscButton)
+                            .addGap(30, 30, 30))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2)
-                                .addGap(30, 30, 30))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1)
+                            .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ativaCheck)
                             .addComponent(jLabel5))
                         .addGap(114, 114, 114))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton3))
+                            .addComponent(voltarButton)
+                            .addComponent(salvarButton))
                         .addGap(51, 51, 51))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void anoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_anoActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void ativaCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ativaCheckActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_ativaCheckActionPerformed
+
+    private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarButtonActionPerformed
+        // TODO add your handling code here:
+        if(ano.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Preencha o Ano da Grade");
+        }
+        else if(discAddList.getSelectedValuesList().isEmpty()){
+            JOptionPane.showMessageDialog(null, "É necessário que a Grade possua pelo menos UMA Disciplina");
+        }
+        else{
+            try{
+                Curso curso = null;
+                ArrayList<Disciplina> disciplinas = new ArrayList<>();
+                for(Curso c: Main.ListadeCursos)
+                    if(c.equals(cursoBox.getSelectedItem()))
+                        curso = c;
+                for(Disciplina d: Main.ListadeDisciplina)
+                    if(disciplinasAdicionadas.contains(d.getNome()))
+                        disciplinas.add(d);
+                
+                Grade novaGrade = new Grade(Integer.parseInt(ano.getText()), curso, disciplinas, ativaCheck.isEnabled());
+            }
+            catch(NullPointerException e){
+                JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
+            }    
+        }
+        
+    }//GEN-LAST:event_salvarButtonActionPerformed
+
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        // TODO add your handling code here:
+        Main.telaCadastroGrade.setVisible(false);
+        Main.telaMenu.setVisible(true);
+    }//GEN-LAST:event_voltarButtonActionPerformed
+
+    private void addDiscButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDiscButtonActionPerformed
+        if(!discDispList.isSelectionEmpty()){  
+            String newItem = discDispList.getSelectedValue();
+            int i=0;
+            
+            if(disciplinasAdicionadas.contains(newItem)){
+                JOptionPane.showMessageDialog(null, "Esta Disciplina ja foi adicionada");
+                return;
+            }
+            disciplinasAdicionadas.add(newItem);
+            discAddList.setListData(disciplinasAdicionadas);
+        }
+    }//GEN-LAST:event_addDiscButtonActionPerformed
+
+    private void remDiscButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remDiscButtonActionPerformed
+        if(!discAddList.isSelectionEmpty()){  
+            String item = discDispList.getSelectedValue();
+            disciplinasAdicionadas.remove(item);
+            discAddList.setListData(disciplinasAdicionadas);
+        }
+    }//GEN-LAST:event_remDiscButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,12 +336,12 @@ public class CadastroGrade extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addDiscButton;
+    private javax.swing.JTextField ano;
+    private javax.swing.JCheckBox ativaCheck;
     private javax.swing.JComboBox<String> cursoBox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JList<String> discAddList;
+    private javax.swing.JList<String> discDispList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -249,10 +350,10 @@ public class CadastroGrade extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton remDiscButton;
+    private javax.swing.JButton salvarButton;
+    private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
