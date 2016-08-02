@@ -33,14 +33,6 @@ class Turma {
         this.numMaxAlunos=numMax;
         this.sala=sala;
     }
-
-    Turma(Disciplina disc, JTextField descricao, JComboBox<String> curso, Professor profResp, JTextField ano, JTextField semestre, JTextField maxAlunos, JTextField sala) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    Turma(Disciplina disc, JTextField descricao, Curso cursoSelecionado, Professor profResp, JTextField ano, JTextField semestre, JTextField maxAlunos, JTextField sala) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     public void matricularAluno(Aluno aluno){
         alunosMatriculados.add(aluno);
     }

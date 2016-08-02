@@ -337,7 +337,7 @@
                                                   <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                                                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="dadaIngresso" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="dataIngresso" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -445,7 +445,7 @@
                   <Group type="102" attributes="0">
                       <Component id="cursos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="dadaIngresso" min="-2" max="-2" attributes="0"/>
+                      <Component id="dataIngresso" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="matricula" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -612,9 +612,9 @@
         <Property name="text" type="java.lang.String" value="Data de Ingresso:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="dadaIngresso">
+    <Component class="javax.swing.JTextField" name="dataIngresso">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dadaIngressoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dataIngressoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

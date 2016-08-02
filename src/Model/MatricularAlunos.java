@@ -58,7 +58,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(532, 492));
+        setPreferredSize(new java.awt.Dimension(600, 530));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Matricular Aluno");
@@ -168,28 +168,32 @@ public class MatricularAlunos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
         if(alunosSelecionados.isEmpty()){
             JOptionPane.showMessageDialog(null, "É necessário que a Turma possua pelo menos UM Aluno");
         }
         else{
             try{
-                
+                Turma tur=null;
+                ArrayList <Aluno> alunosAux =new ArrayList<>();
                 for(Turma t: Main.listaTurmas){
-                        if(t.getDescricao().equals(turma.getSelectedItem().toString())){
-                                for(Aluno a : Main.ListadeAlunos)
-                                {
-                                    for(int i=0;i<alunosSelecionados.size();i++){
-                                        if(a.getMatricula().equals(alunosSelecionados.get(i)))
-                                            t.matricularAluno(a);
-                                    }
-                                }
-                        }
+                    if(t.getDescricao().equals(turma.getSelectedItem().toString())){
+                           tur=t;
+                    }
                 } 
+                for(Aluno a : Main.ListadeAlunos)
+                {
+                    for(int i=0;i<alunosSelecionados.size();i++){
+                      if(a.getMatricula().equals(alunosSelecionados.get(i)))
+                        {
+                            alunosAux.add(a);
+                        }
+                    }
+                }
+               for(int i=0;i<alunosAux.size();i++){
+                       tur.matricularAluno(alunosAux.get(i));
+                }
                 alunosSelecionados.clear();
                 paraMatricular.setListData(alunosSelecionados);
-                
                 JOptionPane.showMessageDialog(null, "Matricula realizada com sucesso");
             }
             catch(NullPointerException e){

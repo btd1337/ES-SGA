@@ -25,13 +25,13 @@ public class Curso {
       {
           
       }
-    public Curso(String cod, String nome, String descricao, int cargaHoraria, Professor coordenador, TipoCurso tipoCurso, Departamento departamento) {
+    public Curso(String cod, String nome, String descricao, int cargaHoraria, Professor coordenador/*, TipoCurso tipoCurso*/, Departamento departamento) {
         this.cod = cod;
         this.nome = nome;
         this.descricao = descricao;
         this.cargaHoraria = cargaHoraria;
         this.coordenador = coordenador;
-        this.tipoCurso = tipoCurso;
+       // this.tipoCurso = tipoCurso;
         this.departamento = departamento;
     }
 

@@ -14,11 +14,11 @@ import javax.swing.JTextField;
 public class Aluno {
     private String nome;
     private String rg;
-    private long cpf;
+    private String cpf;
     private String logradouro;
     private String cep;
     private String bairro;
-    private long numero;
+    private String numero;
     private String complemento;
     private String uf;
     private String matricula;
@@ -26,7 +26,7 @@ public class Aluno {
     private String dataIngresso;
     private EstadoAluno estadoAluno;
 
-    public Aluno(String nome, String rg, long cpf, String logradouro, String cep, String bairro, long numero, String complemento, String uf, String matricula, Curso curso, String dataIngresso) {
+    public Aluno(String nome, String rg, String cpf, String logradouro, String cep, String bairro, String numero, String complemento, String uf, String matricula, Curso curso, String dataIngresso) {
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
@@ -40,10 +40,6 @@ public class Aluno {
         this.curso = curso;
         this.dataIngresso = dataIngresso;
         this.estadoAluno = EstadoAluno.Matriculado;
-    }
-
-    Aluno(JTextField nome1, JTextField rg1, JTextField cpf1, JTextField logradouro1, JTextField cep1, JTextField bairro1, JTextField numero1, JTextField complemento1, JTextField uf1, JTextField matricula, Curso cursoSelecionado, JTextField dadaIngresso) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNome() {
@@ -62,11 +58,11 @@ public class Aluno {
         this.rg = rg;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -94,11 +90,11 @@ public class Aluno {
         this.bairro = bairro;
     }
 
-    public long getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(long numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

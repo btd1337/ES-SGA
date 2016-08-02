@@ -89,7 +89,7 @@ public class CadastroAluno extends javax.swing.JFrame {
         cursos = new javax.swing.JComboBox<>();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        dadaIngresso = new javax.swing.JTextField();
+        dataIngresso = new javax.swing.JTextField();
 
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -352,9 +352,9 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         jLabel28.setText("Data de Ingresso:");
 
-        dadaIngresso.addActionListener(new java.awt.event.ActionListener() {
+        dataIngresso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dadaIngressoActionPerformed(evt);
+                dataIngressoActionPerformed(evt);
             }
         });
 
@@ -407,7 +407,7 @@ public class CadastroAluno extends javax.swing.JFrame {
                                                     .addComponent(jButton3)
                                                     .addGap(130, 130, 130)
                                                     .addComponent(jButton4))
-                                                .addComponent(dadaIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(dataIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel23)
@@ -490,7 +490,7 @@ public class CadastroAluno extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(cursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
-                        .addComponent(dadaIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dataIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(matricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -554,7 +554,7 @@ if(bairro1.getText().equals("") || nome1.getText().equals("") || rg1.getText().e
                     if(c.getNome().equals(cursos.getSelectedItem()))
                         cursoSelecionado= c;
                 }
-                Aluno aluno = new Aluno(nome1,rg1,cpf1,logradouro1,cep1,bairro1,numero1,complemento1,uf1,matricula,cursoSelecionado,dadaIngresso);
+                Aluno aluno = new Aluno(nome1.getText(),rg1.getText(),cpf1.getText(),logradouro1.getText(),cep1.getText(),bairro1.getText(),numero1.getText(),complemento1.getText(),uf1.getText(),matricula.getText(),cursoSelecionado,dataIngresso.getText());
                 Main.ListadeAlunos.add(aluno);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 bairro1.setText("");
@@ -567,7 +567,8 @@ if(bairro1.getText().equals("") || nome1.getText().equals("") || rg1.getText().e
                 numero1.setText("");
                 complemento1.setText("");
                 uf1.setText("");
-               
+                matricula.setText("");
+                dataIngresso.setText("");
             }
             catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(null, "Erro: Você inseriu caracteres inválidos em um campo de números");
@@ -587,9 +588,9 @@ if(bairro1.getText().equals("") || nome1.getText().equals("") || rg1.getText().e
         // TODO add your handling code here:
     }//GEN-LAST:event_matriculaActionPerformed
 
-    private void dadaIngressoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadaIngressoActionPerformed
+    private void dataIngressoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataIngressoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_dadaIngressoActionPerformed
+    }//GEN-LAST:event_dataIngressoActionPerformed
 
     private void cursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cursosActionPerformed
         // TODO add your handling code here:
@@ -640,7 +641,7 @@ if(bairro1.getText().equals("") || nome1.getText().equals("") || rg1.getText().e
     private javax.swing.JTextField cpf;
     private javax.swing.JTextField cpf1;
     private javax.swing.JComboBox<String> cursos;
-    private javax.swing.JTextField dadaIngresso;
+    private javax.swing.JTextField dataIngresso;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

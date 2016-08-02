@@ -202,7 +202,7 @@ public class CadastroTurma extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(professorResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -260,7 +260,7 @@ public class CadastroTurma extends javax.swing.JFrame {
         if (profResp != null && cursoSelecionado != null && disc != null)
         {     
             try{
-                Turma turma = new Turma(disc,descricao,cursoSelecionado, profResp,ano,semestre,maxAlunos,sala);
+                Turma turma = new Turma(disc,descricao.getText(),cursoSelecionado, profResp,ano.getText(),semestre.getText(), Integer.parseInt(maxAlunos.getText()),sala.getText());
                 Main.listaTurmas.add(turma);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 descricao.setText("");
