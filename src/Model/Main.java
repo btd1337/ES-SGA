@@ -114,6 +114,12 @@ public class Main {
        ListadeAlunos.add(a4);
         Aluno a5=new Aluno("aluno 5","rg5", "cpf4", "logradouro 5", "cep 5"," bairro 5", "numero 5", "complemento 5", "uf 1", "matricula 5",c5 , "dataIngresso 5");
        ListadeAlunos.add(a5);
+       Disciplina disciplina1 = new Disciplina("Disciplina1");
+       ListadeDisciplina.add(disciplina1);
+       Disciplina disciplina2 = new Disciplina("Disciplina2");
+       ListadeDisciplina.add(disciplina2);
+       Disciplina disciplina3 = new Disciplina("Disciplina3");
+       ListadeDisciplina.add(disciplina3);
         
        
    }
