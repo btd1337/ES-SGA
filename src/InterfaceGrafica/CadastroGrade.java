@@ -40,6 +40,7 @@ public class CadastroGrade extends javax.swing.JFrame {
         discDispList.setListData(disciplinasDisponiveis);
         discAddList.setListData(disciplinasAdicionadas);
     
+        cursoBox.removeAllItems();
         for(Curso c: Main.ListadeCursos){
             cursoBox.addItem(c.getNome());
         }

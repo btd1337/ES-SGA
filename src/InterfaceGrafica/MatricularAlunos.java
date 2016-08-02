@@ -26,6 +26,14 @@ public class MatricularAlunos extends javax.swing.JFrame {
     public MatricularAlunos() {
         initComponents();
     }
+    public void carregarComboBox(){
+        turma.removeAllItems();
+        for(Turma t: Main.listaTurmas){
+            turma.addItem(t.getDescricao());
+        }
+    }
+    
+    
     public void CarregarCampos(){
         alunosCadastrados = new Vector<>();
         alunosSelecionados = new Vector<>();  
@@ -34,9 +42,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
         }
         alunos.setListData(alunosCadastrados);
         paraMatricular.setListData(alunosSelecionados);
-        for(Turma t: Main.listaTurmas){
-            turma.addItem(t.getDescricao());
-        }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,6 +76,12 @@ public class MatricularAlunos extends javax.swing.JFrame {
         jLabel2.setText("Alunos:");
 
         jScrollPane2.setViewportView(paraMatricular);
+
+        turma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                turmaActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Turma:");
 
@@ -223,7 +235,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
          if(!paraMatricular.isSelectionEmpty()){  
-            String item = alunos.getSelectedValue();
+            String item = paraMatricular.getSelectedValue();
             alunosSelecionados.remove(item);
             paraMatricular.setListData(alunosSelecionados);
         }
@@ -234,6 +246,10 @@ public class MatricularAlunos extends javax.swing.JFrame {
           Main.telaMatriculaAlunos.setVisible(false);
           Main.telaMenu.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void turmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_turmaActionPerformed
 
     /**
      * @param args the command line arguments
