@@ -24,10 +24,24 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="45" pref="47" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="incluirDepartamento" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                  <Component id="incluirCurso" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="193" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" pref="61" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="45" pref="47" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="incluirTurma" max="32767" attributes="0"/>
+                  <Component id="incluirDepartamento" alignment="1" pref="160" max="32767" attributes="0"/>
+                  <Component id="incluirCurso" alignment="1" pref="160" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -46,19 +60,6 @@
               </Group>
               <EmptySpace pref="85" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="193" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="61" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -72,13 +73,15 @@
                   <Component id="CadastroProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="incluirDisciplina" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="53" pref="53" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="incluirGrade" alignment="3" max="32767" attributes="0"/>
                   <Component id="incluirCurso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="incluirGrade" alignment="3" max="32767" attributes="0"/>
                   <Component id="incluirAluno" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <EmptySpace pref="39" max="32767" attributes="0"/>
+              <Component id="incluirTurma" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" pref="31" max="-2" attributes="0"/>
               <EmptySpace pref="53" max="32767" attributes="0"/>
           </Group>
@@ -148,6 +151,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="incluirTurma">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Incluir Turma"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="incluirTurmaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

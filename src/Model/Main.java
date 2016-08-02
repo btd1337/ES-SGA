@@ -9,6 +9,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import java.io.BufferedReader;
+import java.io.FileReader;
 /**
  *
  * @author btd1337
@@ -21,6 +23,7 @@ public class Main {
      */
     public static ArrayList< Departamento > ListadeDepartamentos = new ArrayList<>();
     public static ArrayList< Professor > ListadeProfessores = new ArrayList<>();
+    public static ArrayList< Turma > listaTurmas=new ArrayList<>();
     public static ArrayList< Aluno > ListadeAlunos = new ArrayList<>();
     public static ArrayList< Disciplina > ListadeDisciplina = new ArrayList<>();
     public static ArrayList< Curso > ListadeCursos = new ArrayList<>();
@@ -31,6 +34,7 @@ public class Main {
     public static CadastroCurso telaCadastroCurso = new CadastroCurso();
     public static CadastroGrade telaCadastroGrade = new CadastroGrade();
     public static CadastroAluno telaCadastroAluno = new CadastroAluno();
+    public static CadastroTurma telaCadastroTurma = new CadastroTurma();
      
      public static TelaMenu telaMenu = new TelaMenu();
      public static int opMenu;
