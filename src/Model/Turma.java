@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author luisf
  */
-class Turma {
+public class Turma {
     Disciplina disciplina;
     String descricao;
     Curso curso;

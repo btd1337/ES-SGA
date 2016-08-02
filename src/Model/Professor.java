@@ -9,7 +9,7 @@ package Model;
  *
  * @author btd1337
  */
-class Professor {
+public class Professor {
     private String nome;
     private String rg;
     private long cpf;

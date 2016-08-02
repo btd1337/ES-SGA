@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package InterfaceGrafica;
 
+import Model.Curso;
+import Model.Disciplina;
+import Model.Main;
+import Model.Professor;
+import Model.Turma;
 import javax.swing.JOptionPane;
 
 /**
@@ -69,7 +74,6 @@ public class CadastroTurma extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(532, 492));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Cadastro de Turmas");

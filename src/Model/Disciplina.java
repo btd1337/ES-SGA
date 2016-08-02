@@ -9,7 +9,7 @@ package Model;
  *
  * @author btd1337
  */
-class Disciplina {
+public class Disciplina {
     String nome;
     String ementa;
     String bibliografia;

@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package InterfaceGrafica;
 
+import Model.Curso;
+import Model.Disciplina;
+import Model.Grade;
+import Model.Main;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.DefaultListModel;
