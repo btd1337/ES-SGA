@@ -22,6 +22,10 @@ public class Turma {
     String semestre;
     int numMaxAlunos;
     String sala;
+    
+    public Turma(Disciplina disciplina){
+        this.disciplina = disciplina;
+    }
 
     public Turma(Disciplina disc, String descricao, Curso curso, Professor prof, String ano, String semestre, int numMax, String sala) {
         this.disciplina = disc;

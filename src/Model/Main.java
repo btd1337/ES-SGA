@@ -118,7 +118,12 @@ public class Main {
         ListadeDisciplina.add(disciplina2);
         Disciplina disciplina3 = new Disciplina("Disciplina3");
         ListadeDisciplina.add(disciplina3);
-
+        Turma turma1 = new Turma(disciplina3, "Turma 1", c5, p5, "2016", "3", opMenu, "1240");
+        listaTurmas.add(turma1);
+        Turma turma2 = new Turma(disciplina1, "Turma 2", c5, p5, "2016", "3", opMenu, "1350");
+        listaTurmas.add(turma2);
+        Turma turma3 = new Turma(disciplina2, "Turma 3", c5, p5, "2016", "3", opMenu, "1181");
+        listaTurmas.add(turma3);
     }
     /*
     private static void exibeMenu() {
