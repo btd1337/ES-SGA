@@ -21,7 +21,10 @@ public class Curso {
     private Departamento departamento;
     private ArrayList<Grade> gradesAtivas;
     private ArrayList<Grade> gradesInativas;
-    
+      public Curso()
+      {
+          
+      }
     public Curso(String cod, String nome, String descricao, int cargaHoraria, Professor coordenador, TipoCurso tipoCurso, Departamento departamento) {
         this.cod = cod;
         this.nome = nome;

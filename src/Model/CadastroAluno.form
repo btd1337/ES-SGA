@@ -329,7 +329,7 @@
                                           <EmptySpace min="59" pref="59" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jComboBox1" max="32767" attributes="0"/>
+                                                  <Component id="cursos" max="32767" attributes="0"/>
                                                   <Component id="matricula" min="-2" pref="150" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
@@ -337,7 +337,7 @@
                                                   <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                                                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="dataIngresso" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="dadaIngresso" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -443,9 +443,9 @@
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="cursos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="dataIngresso" min="-2" max="-2" attributes="0"/>
+                      <Component id="dadaIngresso" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="matricula" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -589,14 +589,14 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="matriculaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="cursos">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cursosActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -612,9 +612,9 @@
         <Property name="text" type="java.lang.String" value="Data de Ingresso:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="dataIngresso">
+    <Component class="javax.swing.JTextField" name="dadaIngresso">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dataIngressoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dadaIngressoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

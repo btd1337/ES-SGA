@@ -44,6 +44,7 @@ public class CadastroTurma extends javax.swing.JFrame {
     private void initComponents() {
 
         tipoCurso = new javax.swing.JComboBox<>();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         disciplina = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
@@ -65,13 +66,14 @@ public class CadastroTurma extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         curso = new javax.swing.JComboBox<>();
 
+        jToggleButton1.setText("jToggleButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(532, 492));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Cadastro de Turmas");
 
-        disciplina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         disciplina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 disciplinaActionPerformed(evt);
@@ -85,7 +87,6 @@ public class CadastroTurma extends javax.swing.JFrame {
 
         jLabel4.setText("Descrição da Turma:");
 
-        professorResponsavel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         professorResponsavel.setToolTipText("");
 
         jLabel5.setText("Profesor Responsavel:");
@@ -119,8 +120,6 @@ public class CadastroTurma extends javax.swing.JFrame {
         });
 
         jLabel10.setText("Curso:");
-
-        curso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -261,7 +260,7 @@ public class CadastroTurma extends javax.swing.JFrame {
         if (profResp != null && cursoSelecionado != null && disc != null)
         {     
             try{
-                Turma turma = new Turma(disc,descricao,curso, profResp,ano,semestre,maxAlunos,sala);
+                Turma turma = new Turma(disc,descricao,cursoSelecionado, profResp,ano,semestre,maxAlunos,sala);
                 Main.listaTurmas.add(turma);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 descricao.setText("");
@@ -282,7 +281,6 @@ public class CadastroTurma extends javax.swing.JFrame {
 
     private void disciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disciplinaActionPerformed
         // TODO add your handling code here:
-        CarregarComboBoxes();
     }//GEN-LAST:event_disciplinaActionPerformed
 
     /**
@@ -336,6 +334,7 @@ public class CadastroTurma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField maxAlunos;
     private javax.swing.JComboBox<String> professorResponsavel;
     private javax.swing.JTextField sala;

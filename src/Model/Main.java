@@ -35,6 +35,8 @@ public class Main {
     public static CadastroGrade telaCadastroGrade = new CadastroGrade();
     public static CadastroAluno telaCadastroAluno = new CadastroAluno();
     public static CadastroTurma telaCadastroTurma = new CadastroTurma();
+    public static MatricularAlunos telaMatriculaAlunos = new MatricularAlunos();
+    
      
      public static TelaMenu telaMenu = new TelaMenu();
      public static int opMenu;

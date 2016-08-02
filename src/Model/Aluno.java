@@ -5,6 +5,8 @@
  */
 package Model;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author Mateus
@@ -38,6 +40,10 @@ public class Aluno {
         this.curso = curso;
         this.dataIngresso = dataIngresso;
         this.estadoAluno = EstadoAluno.Matriculado;
+    }
+
+    Aluno(JTextField nome1, JTextField rg1, JTextField cpf1, JTextField logradouro1, JTextField cep1, JTextField bairro1, JTextField numero1, JTextField complemento1, JTextField uf1, JTextField matricula, Curso cursoSelecionado, JTextField dadaIngresso) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNome() {

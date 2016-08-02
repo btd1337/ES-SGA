@@ -262,7 +262,8 @@ public class CadastroCurso extends javax.swing.JFrame {
         }
         else if(profSelected != null && depSelected != null){
             try{
-                Curso novoCurso = new Curso(codigo.getText(),nomeCurso.getText(), descricao.getText(), Integer.parseInt(cargaHoraria.getText()), profSelected, tipoSelected, depSelected);
+                Curso novoCurso;
+                novoCurso = new Curso(codigo.toString(),nomeCurso.toString(), descricao.toString(), Integer.parseInt(cargaHoraria.toString()), profSelected, tipoSelected, depSelected);
                 Main.ListadeCursos.add(novoCurso);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 codigo.setText("");
