@@ -235,7 +235,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
          if(!paraMatricular.isSelectionEmpty()){  
-            String item = alunos.getSelectedValue();
+            String item = paraMatricular.getSelectedValue();
             alunosSelecionados.remove(item);
             paraMatricular.setListData(alunosSelecionados);
         }

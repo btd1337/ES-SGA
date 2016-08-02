@@ -5,6 +5,17 @@
  */
 package Model;
 
+<<<<<<< HEAD
+import InterfaceGrafica.MatricularAlunos;
+import InterfaceGrafica.CadastroProfessor;
+import InterfaceGrafica.CadastroCurso;
+import InterfaceGrafica.TelaMenu;
+import InterfaceGrafica.CadastroTurma;
+import InterfaceGrafica.CadastroGrade;
+import InterfaceGrafica.CadastroAluno;
+import InterfaceGrafica.CadastroDepartamento;
+import InterfaceGrafica.CadastroDisciplina;
+=======
 import InterfaceGrafica.TelaMenu;
 import InterfaceGrafica.CadastroDepartamento;
 import InterfaceGrafica.CadastroCurso;
@@ -14,6 +25,7 @@ import InterfaceGrafica.CadastroGrade;
 import InterfaceGrafica.CadastroDisciplina;
 import InterfaceGrafica.CadastroProfessor;
 import InterfaceGrafica.CadastroAluno;
+>>>>>>> origin/master
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
