@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author btd1337
  */
-class Grade {
+public class Grade {
     int ano;
     Curso curso;
     ArrayList<Disciplina> disciplinasObrigatorias;

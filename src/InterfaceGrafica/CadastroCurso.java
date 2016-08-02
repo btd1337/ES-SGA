@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package InterfaceGrafica;
 
+import Model.Curso;
+import Model.Departamento;
+import Model.Main;
+import Model.Professor;
+import Model.TipoCurso;
 import javax.swing.JOptionPane;
 
 /**

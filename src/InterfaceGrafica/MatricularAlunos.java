@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package InterfaceGrafica;
 
+import Model.Aluno;
+import Model.Main;
+import Model.Turma;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
@@ -58,7 +61,6 @@ public class MatricularAlunos extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 530));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Matricular Aluno");
@@ -221,7 +223,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
          if(!paraMatricular.isSelectionEmpty()){  
-            String item = alunos.getSelectedValue();
+            String item = paraMatricular.getSelectedValue();
             alunosSelecionados.remove(item);
             paraMatricular.setListData(alunosSelecionados);
         }

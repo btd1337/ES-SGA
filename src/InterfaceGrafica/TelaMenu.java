@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package InterfaceGrafica;
 
+import Model.Main;
 import Model.Main;
 import static javafx.application.Platform.exit;
 
