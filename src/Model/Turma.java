@@ -6,8 +6,7 @@
 package Model;
 
 import java.util.ArrayList;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
+
 /**
  *
  * @author luisf
@@ -32,9 +31,11 @@ class Turma {
         this.semestre=semestre;
         this.numMaxAlunos=numMax;
         this.sala=sala;
+        alunosMatriculados=new ArrayList<>();
     }
     public void matricularAluno(Aluno aluno){
-        alunosMatriculados.add(aluno);
+        if(!alunosMatriculados.contains(aluno))
+            alunosMatriculados.add(aluno);
     }
     public Disciplina getDisciplina() {
         return disciplina;

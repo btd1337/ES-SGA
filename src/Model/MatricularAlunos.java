@@ -57,7 +57,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 530));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -112,15 +112,14 @@ public class MatricularAlunos extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel3)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(turma, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGap(107, 107, 107))
+                                    .addComponent(turma, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jButton2)
                                         .addComponent(jButton3))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                    .addGap(16, 16, 16)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
@@ -129,7 +128,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
                             .addGap(192, 192, 192)
                             .addComponent(jLabel1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addContainerGap()
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)))
@@ -168,38 +167,40 @@ public class MatricularAlunos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       Turma tur=null;
+       for(Turma t: Main.listaTurmas){
+        if(t.getDescricao().equals(turma.getSelectedItem().toString()))
+               tur=t;
+        } 
         if(alunosSelecionados.isEmpty()){
             JOptionPane.showMessageDialog(null, "É necessário que a Turma possua pelo menos UM Aluno");
         }
-        else{
-            try{
-                Turma tur=null;
-                ArrayList <Aluno> alunosAux =new ArrayList<>();
-                for(Turma t: Main.listaTurmas){
-                    if(t.getDescricao().equals(turma.getSelectedItem().toString())){
-                           tur=t;
-                    }
-                } 
+        if(tur!=null)
+        {
+                
                 for(Aluno a : Main.ListadeAlunos)
                 {
                     for(int i=0;i<alunosSelecionados.size();i++){
                       if(a.getMatricula().equals(alunosSelecionados.get(i)))
                         {
-                            alunosAux.add(a);
+                           try{
+                                tur.matricularAluno(a);
+                           }
+                           catch(NullPointerException e){
+                                JOptionPane.showMessageDialog(null, "NullPointerException" );
+                            }  
                         }
                     }
-                }
-               for(int i=0;i<alunosAux.size();i++){
-                       tur.matricularAluno(alunosAux.get(i));
                 }
                 alunosSelecionados.clear();
                 paraMatricular.setListData(alunosSelecionados);
                 JOptionPane.showMessageDialog(null, "Matricula realizada com sucesso");
-            }
-            catch(NullPointerException e){
-                JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
-            }    
-        }
+                
+      }
+      else{
+          JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
+         }    
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

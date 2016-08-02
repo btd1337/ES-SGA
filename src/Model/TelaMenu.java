@@ -38,8 +38,8 @@ public class TelaMenu extends javax.swing.JFrame {
         incluirCurso = new javax.swing.JButton();
         incluirGrade = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        incluirTurma = new javax.swing.JToggleButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,17 +95,17 @@ public class TelaMenu extends javax.swing.JFrame {
             }
         });
 
-        incluirTurma.setText("Incluir Turma");
-        incluirTurma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                incluirTurmaActionPerformed(evt);
-            }
-        });
-
         jButton2.setText("Matricular Alunos");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Incluir Turma");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -125,9 +125,9 @@ public class TelaMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(incluirTurma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(incluirDepartamento, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                    .addComponent(incluirCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                    .addComponent(incluirCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(incluirGrade, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
@@ -159,8 +159,8 @@ public class TelaMenu extends javax.swing.JFrame {
                     .addComponent(incluirAluno))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(incluirTurma)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addGap(11, 11, 11)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(53, Short.MAX_VALUE))
@@ -170,7 +170,7 @@ public class TelaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadastroProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroProfessorActionPerformed
-        Main.telaMenu.setVisible(false);
+
         Main.telaCadastroProfessor.setVisible(true);
         
         
@@ -178,23 +178,21 @@ public class TelaMenu extends javax.swing.JFrame {
 
     private void incluirAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirAlunoActionPerformed
         Main.telaCadastroAluno.carregarComboBoxes();
-        Main.telaMenu.setVisible(false);
         Main.telaCadastroAluno.setVisible(true);
     }//GEN-LAST:event_incluirAlunoActionPerformed
 
     private void incluirDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirDepartamentoActionPerformed
-         Main.telaMenu.setVisible(false);
+
         Main.telaCadastroDepartamento.setVisible(true);
     }//GEN-LAST:event_incluirDepartamentoActionPerformed
 
     private void incluirDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirDisciplinaActionPerformed
-        Main.telaMenu.setVisible(false);   
+
         Main.telaCadastrDisciplina.setVisible(true);
     }//GEN-LAST:event_incluirDisciplinaActionPerformed
 
     private void incluirCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirCursoActionPerformed
-        Main.telaCadastroCurso.CarregarComboBoxes();        
-        Main.telaMenu.setVisible(false);   
+        Main.telaCadastroCurso.CarregarComboBoxes();          
         Main.telaCadastroCurso.setVisible(true);
     }//GEN-LAST:event_incluirCursoActionPerformed
 
@@ -204,22 +202,20 @@ public class TelaMenu extends javax.swing.JFrame {
 
     private void incluirGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirGradeActionPerformed
         Main.telaCadastroGrade.CarregarCampos();
-        Main.telaMenu.setVisible(false);   
         Main.telaCadastroGrade.setVisible(true);
     }//GEN-LAST:event_incluirGradeActionPerformed
-
-    private void incluirTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirTurmaActionPerformed
-        Main.telaCadastroTurma.CarregarComboBoxes();
-        Main.telaMenu.setVisible(false);
-        Main.telaCadastroTurma.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_incluirTurmaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Main.telaMatriculaAlunos.CarregarCampos();
-        Main.telaMenu.setVisible(false);
         Main.telaMatriculaAlunos.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+       Main.telaCadastroTurma.CarregarComboBoxes();
+      Main.telaCadastroTurma.setVisible(true);  
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,9 +259,9 @@ public class TelaMenu extends javax.swing.JFrame {
     private javax.swing.JButton incluirDepartamento;
     private javax.swing.JButton incluirDisciplina;
     private javax.swing.JButton incluirGrade;
-    private javax.swing.JToggleButton incluirTurma;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
