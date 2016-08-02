@@ -244,13 +244,11 @@ public class CadastroProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_numeroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(bairro.getText().equals("") || nome.getText().equals("") || rg.getText().equals("")||cpf.getText().equals("")||logradouro.getText().equals("") || cep.getText().equals("")|| numero.getText().equals("")|| uf.getText().equals("") )
-        {
+        if (bairro.getText().equals("") || nome.getText().equals("") || rg.getText().equals("") || cpf.getText().equals("") || logradouro.getText().equals("") || cep.getText().equals("") || numero.getText().equals("") || uf.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro: Campo Vazio");
-        }
-        else{
-            try{
-                Professor novoProfessor = new Professor(nome.getText(),rg.getText(),Long.parseLong(cpf.getText()),logradouro.getText(),cep.getText(), bairro.getText(),Long.parseLong(numero.getText()),complemento.getText(), uf.getText());
+        } else {
+            try {
+                Professor novoProfessor = new Professor(nome.getText(), rg.getText(), Long.parseLong(cpf.getText()), logradouro.getText(), cep.getText(), bairro.getText(), Long.parseLong(numero.getText()), complemento.getText(), uf.getText());
                 Main.ListadeProfessores.add(novoProfessor);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 bairro.setText("");
@@ -263,20 +261,19 @@ public class CadastroProfessor extends javax.swing.JFrame {
                 numero.setText("");
                 complemento.setText("");
                 uf.setText("");
-            }
-            catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Erro: Você inseriu caracteres inválidos em um campo de números");
             }
-            
+
         }
- 
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Main.telaCadastroProfessor.setVisible(false);
         Main.telaMenu.setVisible(true);
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

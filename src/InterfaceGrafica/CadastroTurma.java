@@ -24,21 +24,23 @@ public class CadastroTurma extends javax.swing.JFrame {
     public CadastroTurma() {
         initComponents();
     }
-    public void CarregarComboBoxes(){
+
+    public void CarregarComboBoxes() {
         professorResponsavel.removeAllItems();
         curso.removeAllItems();
         disciplina.removeAllItems();
-        
-        for(Disciplina d: Main.ListadeDisciplina){
+
+        for (Disciplina d : Main.ListadeDisciplina) {
             disciplina.addItem(d.getNome());
         }
-        for(Curso c: Main.ListadeCursos){
+        for (Curso c : Main.ListadeCursos) {
             curso.addItem(c.getNome());
         }
-        for(Professor p: Main.ListadeProfessores){
+        for (Professor p : Main.ListadeProfessores) {
             professorResponsavel.addItem(p.getNome());
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -245,26 +247,29 @@ public class CadastroTurma extends javax.swing.JFrame {
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
         // TODO add your handling code here:
         Disciplina disc = null;
-        Curso cursoSelecionado= null;
-        Professor profResp=null;
-        for(Disciplina d: Main.ListadeDisciplina){
-            if(d.getNome().equals(disciplina.getSelectedItem().toString()))
+        Curso cursoSelecionado = null;
+        Professor profResp = null;
+        for (Disciplina d : Main.ListadeDisciplina) {
+            if (d.getNome().equals(disciplina.getSelectedItem().toString())) {
                 disc = d;
+            }
         }
-        for(Curso c: Main.ListadeCursos){
-            if(c.getNome().equals(curso.getSelectedItem()))
-                cursoSelecionado= c;
+        for (Curso c : Main.ListadeCursos) {
+            if (c.getNome().equals(curso.getSelectedItem())) {
+                cursoSelecionado = c;
+            }
         }
-        for(Professor p: Main.ListadeProfessores){
-            if(p.getNome().equals(professorResponsavel.getSelectedItem().toString()))
+        for (Professor p : Main.ListadeProfessores) {
+            if (p.getNome().equals(professorResponsavel.getSelectedItem().toString())) {
                 profResp = p;
+            }
         }
-        if(descricao.getText().equals("")||curso.equals(null))
+        if (descricao.getText().equals("") || curso.equals(null)) {
             JOptionPane.showMessageDialog(null, "Erro: Campo Vazio");
-        if (profResp != null && cursoSelecionado != null && disc != null)
-        {     
-            try{
-                Turma turma = new Turma(disc,descricao.getText(),cursoSelecionado, profResp,ano.getText(),semestre.getText(), Integer.parseInt(maxAlunos.getText()),sala.getText());
+        }
+        if (profResp != null && cursoSelecionado != null && disc != null) {
+            try {
+                Turma turma = new Turma(disc, descricao.getText(), cursoSelecionado, profResp, ano.getText(), semestre.getText(), Integer.parseInt(maxAlunos.getText()), sala.getText());
                 Main.listaTurmas.add(turma);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 descricao.setText("");
@@ -272,15 +277,13 @@ public class CadastroTurma extends javax.swing.JFrame {
                 semestre.setText("");
                 sala.setText("");
                 maxAlunos.setText("");
-            }
-            catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Erro: Você inseriu caracteres inválidos em um campo de números");
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Professor e/ou Departamento não selecionado");
         }
-       else{
-             JOptionPane.showMessageDialog(null, "Professor e/ou Departamento não selecionado");
-        } 
-                         
+
     }//GEN-LAST:event_salvarActionPerformed
 
     private void disciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disciplinaActionPerformed

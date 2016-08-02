@@ -10,12 +10,13 @@ package Model;
  * @author btd1337
  */
 public class Departamento {
+
     private String cod;
     private String nome;
     private Professor chefeDepartamento;
     private String descricao;
-    
-    public Departamento(String cod, String nome, String descricao){
+
+    public Departamento(String cod, String nome, String descricao) {
         this.cod = cod;
         this.nome = nome;
         this.chefeDepartamento = null;
@@ -60,7 +61,5 @@ public class Departamento {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
-    
+
 }

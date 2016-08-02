@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author btd1337
  */
 public class Curso {
+
     private String cod;
     private String nome;
     private String descricao;
@@ -21,17 +22,18 @@ public class Curso {
     private Departamento departamento;
     private ArrayList<Grade> gradesAtivas;
     private ArrayList<Grade> gradesInativas;
-      public Curso()
-      {
-          
-      }
+
+    public Curso() {
+
+    }
+
     public Curso(String cod, String nome, String descricao, int cargaHoraria, Professor coordenador/*, TipoCurso tipoCurso*/, Departamento departamento) {
         this.cod = cod;
         this.nome = nome;
         this.descricao = descricao;
         this.cargaHoraria = cargaHoraria;
         this.coordenador = coordenador;
-       // this.tipoCurso = tipoCurso;
+        // this.tipoCurso = tipoCurso;
         this.departamento = departamento;
     }
 
@@ -82,7 +84,7 @@ public class Curso {
     public void setTipoCurso(TipoCurso tipoCurso) {
         this.tipoCurso = tipoCurso;
     }
-    
+
     public Departamento getDepartamento() {
         return departamento;
     }
@@ -106,15 +108,14 @@ public class Curso {
     public void setGradesInativas(ArrayList<Grade> gradesInativas) {
         this.gradesInativas = gradesInativas;
     }
-    
-    public void addGradeAtiva(Grade novaGrade){
+
+    public void addGradeAtiva(Grade novaGrade) {
         gradesAtivas.add(novaGrade);
     }
-    
-    
-    public void addGradeInativa(Grade velhaGrade){
+
+    public void addGradeInativa(Grade velhaGrade) {
         gradesInativas.add(velhaGrade);
     }
-    
+
     //TODO remove grades
 }

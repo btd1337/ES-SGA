@@ -131,13 +131,10 @@ public class CadastroDisciplina extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(nome.getText().equals("") || Ementa.getText().equals("") || biblio.getText().equals("") )
-        {
+        if (nome.getText().equals("") || Ementa.getText().equals("") || biblio.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro campo vazio");
-        }
-        else
-        {
-            Disciplina novo = new Disciplina (nome.getText(),Ementa.getText(), biblio.getText() );
+        } else {
+            Disciplina novo = new Disciplina(nome.getText(), Ementa.getText(), biblio.getText());
             Main.ListadeDisciplina.add(novo);
             JOptionPane.showMessageDialog(null, "Cadastro efetuado com sucesso");
             nome.setText("");

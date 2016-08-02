@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author btd1337
  */
 public class Grade {
+
     int ano;
     Curso curso;
     ArrayList<Disciplina> disciplinasObrigatorias;
@@ -60,6 +61,5 @@ public class Grade {
     public void setIsAtiva(boolean ativa) {
         this.ativa = ativa;
     }
-    
-    
+
 }

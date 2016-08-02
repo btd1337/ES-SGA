@@ -10,5 +10,5 @@ package Model;
  * @author Mateus
  */
 public enum EstadoAluno {
-    Matriculado,Formado,Trancado,Abandono,Jubiliado;
+    Matriculado, Formado, Trancado, Abandono, Jubiliado;
 }

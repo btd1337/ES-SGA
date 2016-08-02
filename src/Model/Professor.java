@@ -10,6 +10,7 @@ package Model;
  * @author btd1337
  */
 public class Professor {
+
     private String nome;
     private String rg;
     private long cpf;
@@ -109,6 +110,5 @@ public class Professor {
     public void setUf(String uf) {
         this.uf = uf;
     }
-    
-    
+
 }

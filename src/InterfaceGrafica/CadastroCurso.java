@@ -23,21 +23,22 @@ public class CadastroCurso extends javax.swing.JFrame {
      */
     public CadastroCurso() {
         initComponents();
-        
+
     }
+
     //Manipulação dos ComboBoxes
-    public void CarregarComboBoxes(){
+    public void CarregarComboBoxes() {
         profCoord.removeAllItems();
         tipoCurso.removeAllItems();
         departamento.removeAllItems();
-        
-        for(Professor prof: Main.ListadeProfessores){
+
+        for (Professor prof : Main.ListadeProfessores) {
             profCoord.addItem(prof.getNome());
         }
-        for(TipoCurso curso: TipoCurso.values()){
+        for (TipoCurso curso : TipoCurso.values()) {
             tipoCurso.addItem(curso.name());
         }
-        for(Departamento dep: Main.ListadeDepartamentos){
+        for (Departamento dep : Main.ListadeDepartamentos) {
             departamento.addItem(dep.getNome());
         }
     }
@@ -249,27 +250,28 @@ public class CadastroCurso extends javax.swing.JFrame {
         Professor profSelected = null;
         TipoCurso tipoSelected = null;
         Departamento depSelected = null;
-        for(Professor p: Main.ListadeProfessores){
-            if(p.getNome().equals(profCoord.getSelectedItem().toString()))
+        for (Professor p : Main.ListadeProfessores) {
+            if (p.getNome().equals(profCoord.getSelectedItem().toString())) {
                 profSelected = p;
+            }
         }
-        for(TipoCurso tipo: TipoCurso.values()){
-            if(tipo.equals(tipoCurso.getSelectedItem()))
+        for (TipoCurso tipo : TipoCurso.values()) {
+            if (tipo.equals(tipoCurso.getSelectedItem())) {
                 tipoSelected = tipo;
+            }
         }
-        for(Departamento dep: Main.ListadeDepartamentos){
-            if(dep.getNome().equals(departamento.getSelectedItem().toString()))
+        for (Departamento dep : Main.ListadeDepartamentos) {
+            if (dep.getNome().equals(departamento.getSelectedItem().toString())) {
                 depSelected = dep;
+            }
         }
-        
-        if(codigo.getText().equals("") || nomeCurso.getText().equals("") || descricao.getText().equals("") || cargaHoraria.getText().equals(""))
-        {
+
+        if (codigo.getText().equals("") || nomeCurso.getText().equals("") || descricao.getText().equals("") || cargaHoraria.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro: Campo Vazio");
-        }
-        else if(profSelected != null && depSelected != null){
-            try{
+        } else if (profSelected != null && depSelected != null) {
+            try {
                 Curso novoCurso;
-                novoCurso = new Curso(codigo.getText(),nomeCurso.getText(), descricao.getText(), Integer.parseInt(cargaHoraria.getText()), profSelected,/* tipoSelected,*/ depSelected);
+                novoCurso = new Curso(codigo.getText(), nomeCurso.getText(), descricao.getText(), Integer.parseInt(cargaHoraria.getText()), profSelected,/* tipoSelected,*/ depSelected);
                 Main.ListadeCursos.add(novoCurso);
                 JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso");
                 codigo.setText("");
@@ -277,16 +279,13 @@ public class CadastroCurso extends javax.swing.JFrame {
                 descricao.setText("");
                 cargaHoraria.setText("");
                 codigo.setText("");
-            }
-            catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Erro: Você inseriu caracteres inválidos em um campo de números");
-            }
-            catch(NullPointerException e){
+            } catch (NullPointerException e) {
                 JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
             }
-            
-        }
-        else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Professor e/ou Departamento não selecionado");
         }
     }//GEN-LAST:event_salvarActionPerformed
@@ -317,7 +316,7 @@ public class CadastroCurso extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CadastroCurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -10,6 +10,7 @@ package Model;
  * @author btd1337
  */
 public class Disciplina {
+
     String nome;
     String ementa;
     String bibliografia;
@@ -25,7 +26,6 @@ public class Disciplina {
         this.ementa = ementa;
         this.bibliografia = bibliografia;
     }
-    
 
     public String getNome() {
         return nome;
@@ -50,6 +50,5 @@ public class Disciplina {
     public void setBibliografia(String bibliografia) {
         this.bibliografia = bibliografia;
     }
-    
-    
+
 }

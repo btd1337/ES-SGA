@@ -10,5 +10,5 @@ package Model;
  * @author btd1337
  */
 public enum TipoCurso {
-    Graduacao,Licenciatura,Mestrado,Doutorado;
+    Graduacao, Licenciatura, Mestrado, Doutorado;
 }

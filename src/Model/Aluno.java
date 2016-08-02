@@ -12,6 +12,7 @@ import javax.swing.JTextField;
  * @author Mateus
  */
 public class Aluno {
+
     private String nome;
     private String rg;
     private String cpf;
@@ -145,7 +146,5 @@ public class Aluno {
     public void setEstadoAluno(EstadoAluno estadoAluno) {
         this.estadoAluno = estadoAluno;
     }
-    
-    
-}
 
+}

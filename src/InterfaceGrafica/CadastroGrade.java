@@ -20,28 +20,29 @@ import javax.swing.JOptionPane;
  * @author Mateus
  */
 public class CadastroGrade extends javax.swing.JFrame {
+
     /**
      * Creates new form CadastroGrade
      */
     private Vector<String> disciplinasAdicionadas;
     private Vector<String> disciplinasDisponiveis;
-    
+
     public CadastroGrade() {
         initComponents();
     }
-    
-    public void CarregarCampos(){
+
+    public void CarregarCampos() {
         disciplinasDisponiveis = new Vector<>();
         disciplinasAdicionadas = new Vector<>();
-        
-        for(int i=0; i<Main.ListadeDisciplina.size(); i++){
+
+        for (int i = 0; i < Main.ListadeDisciplina.size(); i++) {
             disciplinasDisponiveis.add(Main.ListadeDisciplina.get(i).getNome());
         }
         discDispList.setListData(disciplinasDisponiveis);
         discAddList.setListData(disciplinasAdicionadas);
-    
+
         cursoBox.removeAllItems();
-        for(Curso c: Main.ListadeCursos){
+        for (Curso c : Main.ListadeCursos) {
             cursoBox.addItem(c.getNome());
         }
     }
@@ -241,36 +242,37 @@ public class CadastroGrade extends javax.swing.JFrame {
 
     private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarButtonActionPerformed
         // TODO add your handling code here:
-        if(ano.getText().equals("")){
+        if (ano.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Preencha o Ano da Grade");
-        }
-        else if(disciplinasAdicionadas.isEmpty()){
+        } else if (disciplinasAdicionadas.isEmpty()) {
             JOptionPane.showMessageDialog(null, "É necessário que a Grade possua pelo menos UMA Disciplina");
-        }
-        else{
-            try{
+        } else {
+            try {
                 Curso curso = null;
                 ArrayList<Disciplina> disciplinas = new ArrayList<>();
-                for(Curso c: Main.ListadeCursos)
-                    if(c.equals(cursoBox.getSelectedItem()))
+                for (Curso c : Main.ListadeCursos) {
+                    if (c.equals(cursoBox.getSelectedItem())) {
                         curso = c;
-                for(Disciplina d: Main.ListadeDisciplina)
-                    if(disciplinasAdicionadas.contains(d.getNome()))
+                    }
+                }
+                for (Disciplina d : Main.ListadeDisciplina) {
+                    if (disciplinasAdicionadas.contains(d.getNome())) {
                         disciplinas.add(d);
-                
+                    }
+                }
+
                 Grade novaGrade = new Grade(Integer.parseInt(ano.getText()), curso, disciplinas, ativaCheck.isEnabled());
                 Main.ListadeGrades.add(novaGrade);
                 ano.setText("");
                 disciplinasAdicionadas.clear();
                 discAddList.setListData(disciplinasAdicionadas);
-                
+
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
-            }
-            catch(NullPointerException e){
+            } catch (NullPointerException e) {
                 JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
-            }    
+            }
         }
-        
+
     }//GEN-LAST:event_salvarButtonActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
@@ -280,11 +282,11 @@ public class CadastroGrade extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarButtonActionPerformed
 
     private void addDiscButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDiscButtonActionPerformed
-        if(!discDispList.isSelectionEmpty()){  
+        if (!discDispList.isSelectionEmpty()) {
             String newItem = discDispList.getSelectedValue();
-            int i=0;
-            
-            if(disciplinasAdicionadas.contains(newItem)){
+            int i = 0;
+
+            if (disciplinasAdicionadas.contains(newItem)) {
                 JOptionPane.showMessageDialog(null, "Esta Disciplina ja foi adicionada");
                 return;
             }
@@ -294,7 +296,7 @@ public class CadastroGrade extends javax.swing.JFrame {
     }//GEN-LAST:event_addDiscButtonActionPerformed
 
     private void remDiscButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remDiscButtonActionPerformed
-        if(!discAddList.isSelectionEmpty()){  
+        if (!discAddList.isSelectionEmpty()) {
             String item = discDispList.getSelectedValue();
             disciplinasAdicionadas.remove(item);
             discAddList.setListData(disciplinasAdicionadas);

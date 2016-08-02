@@ -138,23 +138,21 @@ public class CadastroDepartamento extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      if(jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextArea1.getText().equals(""))
-      {
-           JOptionPane.showMessageDialog(null, "Erro campo vazio");
-      }
-      else{
-      Departamento novo = new Departamento(jTextField1.getText(), jTextField2.getText(), jTextArea1.getText());
-      Main.ListadeDepartamentos.add(novo);
-      JOptionPane.showMessageDialog(null, "Departamento Cadastrado com Sucesso");
-      jTextField1.setText("");
-      jTextField2.setText("");
-      jTextArea1.setText("");
-      }
-    
+        if (jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextArea1.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Erro campo vazio");
+        } else {
+            Departamento novo = new Departamento(jTextField1.getText(), jTextField2.getText(), jTextArea1.getText());
+            Main.ListadeDepartamentos.add(novo);
+            JOptionPane.showMessageDialog(null, "Departamento Cadastrado com Sucesso");
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextArea1.setText("");
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     Main.telaCadastroDepartamento.setVisible(false);
+        Main.telaCadastroDepartamento.setVisible(false);
         Main.telaMenu.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

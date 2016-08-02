@@ -198,8 +198,7 @@ public class TelaMenu extends javax.swing.JFrame {
     private void CadastroProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroProfessorActionPerformed
 
         Main.telaCadastroProfessor.setVisible(true);
-        
-        
+
     }//GEN-LAST:event_CadastroProfessorActionPerformed
 
     private void incluirAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirAlunoActionPerformed
@@ -218,12 +217,12 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_incluirDisciplinaActionPerformed
 
     private void incluirCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirCursoActionPerformed
-        Main.telaCadastroCurso.CarregarComboBoxes();          
+        Main.telaCadastroCurso.CarregarComboBoxes();
         Main.telaCadastroCurso.setVisible(true);
     }//GEN-LAST:event_incluirCursoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void incluirGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirGradeActionPerformed
@@ -240,14 +239,14 @@ public class TelaMenu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-       Main.telaCadastroTurma.CarregarComboBoxes();
-      Main.telaCadastroTurma.setVisible(true);  
+        Main.telaCadastroTurma.CarregarComboBoxes();
+        Main.telaCadastroTurma.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        Main.telaConsultaAlunosTurma.CarregarComboBox();
-         Main.telaConsultaAlunosTurma.setVisible(true);
+        //Main.telaConsultaAlunosTurma.CarregarComboBox();
+        //Main.telaConsultaAlunosTurma.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

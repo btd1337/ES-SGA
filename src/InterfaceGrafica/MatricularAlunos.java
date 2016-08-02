@@ -23,27 +23,29 @@ public class MatricularAlunos extends javax.swing.JFrame {
      */
     private Vector<String> alunosCadastrados;
     private Vector<String> alunosSelecionados;
+
     public MatricularAlunos() {
         initComponents();
     }
-    public void carregarComboBox(){
+
+    public void carregarComboBox() {
         turma.removeAllItems();
-        for(Turma t: Main.listaTurmas){
+        for (Turma t : Main.listaTurmas) {
             turma.addItem(t.getDescricao());
         }
     }
-    
-    
-    public void CarregarCampos(){
+
+    public void CarregarCampos() {
         alunosCadastrados = new Vector<>();
-        alunosSelecionados = new Vector<>();  
-        for(int i=0; i<Main.ListadeAlunos.size(); i++){
+        alunosSelecionados = new Vector<>();
+        for (int i = 0; i < Main.ListadeAlunos.size(); i++) {
             alunosCadastrados.add(Main.ListadeAlunos.get(i).getMatricula());
         }
         alunos.setListData(alunosCadastrados);
         paraMatricular.setListData(alunosSelecionados);
-        
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -181,49 +183,45 @@ public class MatricularAlunos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Turma tur=null;
-       for(Turma t: Main.listaTurmas){
-        if(t.getDescricao().equals(turma.getSelectedItem().toString()))
-               tur=t;
-        } 
-        if(alunosSelecionados.isEmpty()){
+        Turma tur = null;
+        for (Turma t : Main.listaTurmas) {
+            if (t.getDescricao().equals(turma.getSelectedItem().toString())) {
+                tur = t;
+            }
+        }
+        if (alunosSelecionados.isEmpty()) {
             JOptionPane.showMessageDialog(null, "É necessário que a Turma possua pelo menos UM Aluno");
         }
-        if(tur!=null)
-        {
-                
-                for(Aluno a : Main.ListadeAlunos)
-                {
-                    for(int i=0;i<alunosSelecionados.size();i++){
-                      if(a.getMatricula().equals(alunosSelecionados.get(i)))
-                        {
-                           try{
-                                tur.matricularAluno(a);
-                           }
-                           catch(NullPointerException e){
-                                JOptionPane.showMessageDialog(null, "NullPointerException" );
-                            }  
+        if (tur != null) {
+
+            for (Aluno a : Main.ListadeAlunos) {
+                for (int i = 0; i < alunosSelecionados.size(); i++) {
+                    if (a.getMatricula().equals(alunosSelecionados.get(i))) {
+                        try {
+                            tur.matricularAluno(a);
+                        } catch (NullPointerException e) {
+                            JOptionPane.showMessageDialog(null, "NullPointerException");
                         }
                     }
                 }
-                alunosSelecionados.clear();
-                paraMatricular.setListData(alunosSelecionados);
-                JOptionPane.showMessageDialog(null, "Matricula realizada com sucesso");
-                
-      }
-      else{
-          JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
-         }    
-        
+            }
+            alunosSelecionados.clear();
+            paraMatricular.setListData(alunosSelecionados);
+            JOptionPane.showMessageDialog(null, "Matricula realizada com sucesso");
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro: ComboBox não selecionada ou vazia");
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(!alunos.isSelectionEmpty()){  
+        if (!alunos.isSelectionEmpty()) {
             String newItem = alunos.getSelectedValue();
-            int i=0;
-            
-            if(alunosSelecionados.contains(newItem)){
+            int i = 0;
+
+            if (alunosSelecionados.contains(newItem)) {
                 JOptionPane.showMessageDialog(null, "Esta Disciplina ja foi adicionada");
                 return;
             }
@@ -234,7 +232,7 @@ public class MatricularAlunos extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         if(!paraMatricular.isSelectionEmpty()){  
+        if (!paraMatricular.isSelectionEmpty()) {
             String item = paraMatricular.getSelectedValue();
             alunosSelecionados.remove(item);
             paraMatricular.setListData(alunosSelecionados);
@@ -243,8 +241,8 @@ public class MatricularAlunos extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-          Main.telaMatriculaAlunos.setVisible(false);
-          Main.telaMenu.setVisible(true);
+        Main.telaMatriculaAlunos.setVisible(false);
+        Main.telaMenu.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void turmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_turmaActionPerformed

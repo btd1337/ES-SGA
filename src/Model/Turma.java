@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author luisf
  */
 public class Turma {
+
     Disciplina disciplina;
     String descricao;
     Curso curso;
@@ -21,22 +22,25 @@ public class Turma {
     String semestre;
     int numMaxAlunos;
     String sala;
-    public Turma(Disciplina disc,String descricao,Curso curso,Professor prof,String ano,String semestre,int numMax,String sala)
-    {
-        this.disciplina=disc;
-        this.descricao=descricao;
-        this.curso=curso;
-        this.profResponsavel=prof;
-        this.ano=ano;
-        this.semestre=semestre;
-        this.numMaxAlunos=numMax;
-        this.sala=sala;
-        alunosMatriculados=new ArrayList<>();
+
+    public Turma(Disciplina disc, String descricao, Curso curso, Professor prof, String ano, String semestre, int numMax, String sala) {
+        this.disciplina = disc;
+        this.descricao = descricao;
+        this.curso = curso;
+        this.profResponsavel = prof;
+        this.ano = ano;
+        this.semestre = semestre;
+        this.numMaxAlunos = numMax;
+        this.sala = sala;
+        alunosMatriculados = new ArrayList<>();
     }
-    public void matricularAluno(Aluno aluno){
-        if(!alunosMatriculados.contains(aluno))
+
+    public void matricularAluno(Aluno aluno) {
+        if (!alunosMatriculados.contains(aluno)) {
             alunosMatriculados.add(aluno);
+        }
     }
+
     public Disciplina getDisciplina() {
         return disciplina;
     }
@@ -108,5 +112,5 @@ public class Turma {
     public void setSala(String sala) {
         this.sala = sala;
     }
-    
+
 }
